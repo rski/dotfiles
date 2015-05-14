@@ -1,5 +1,6 @@
 set wrapscan
 set relativenumber
+set number
 filetype plugin indent on
 set expandtab
 set shiftwidth=2
@@ -10,7 +11,7 @@ syntax on
 "set smartindent
 "set mouse=a
 autocmd FileType tex setlocal spell spelllang=en_gb
-colorscheme ir_pitch_black
+"colorscheme ir_pitch_black
 
 "latexsuite
 set grepprg=grep\ -nH\ $*
