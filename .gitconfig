@@ -3,3 +3,5 @@
 	email = rom.skiad@gmail.com
 [push]
 	default = simple
+[status]
+	showUntrackedFiles = no
