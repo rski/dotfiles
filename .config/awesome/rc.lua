@@ -11,6 +11,17 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+
+--autostart
+  awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
+  awful.util.spawn_with_shell("runonce clementine")
+  awful.util.spawn_with_shell("runonce dropbox")
+  awful.util.spawn_with_shell("runonce nm-applet")
+  awful.util.spawn_with_shell("runonce steam")
+  awful.util.spawn_with_shell("runonce thunderbird")
+  awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
+  awful.util.spawn_with_shell("runonce kmix")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -278,8 +289,9 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
 
-    -- custom
-    awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end)
+    -- custom shortcuts
+    awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
+    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end)
 )
 
 clientkeys = awful.util.table.join(
