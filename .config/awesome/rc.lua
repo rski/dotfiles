@@ -49,10 +49,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/roig/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "lxterminal"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -291,6 +291,7 @@ globalkeys = awful.util.table.join(
 
     -- custom shortcuts
     awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
+    awful.key({ modkey,           }, "a",     function () awful.util.spawn(thunderbird) end),
     awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end)
 )
 
