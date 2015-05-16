@@ -11,6 +11,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+--requires cloning of the revelation plugin
+require("revelation")
+
 
 --autostart
   awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
@@ -290,6 +293,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- custom shortcuts
+    awful.key({modkey}, "e", revelation),
+
     awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
     awful.key({ modkey,           }, "a",     function () awful.util.spawn(thunderbird) end),
     awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end)
