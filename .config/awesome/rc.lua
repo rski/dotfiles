@@ -17,7 +17,6 @@ local menubar = require("menubar")
   awful.util.spawn_with_shell("runonce clementine")
   awful.util.spawn_with_shell("runonce dropbox")
   awful.util.spawn_with_shell("runonce nm-applet")
-  awful.util.spawn_with_shell("runonce steam")
   awful.util.spawn_with_shell("runonce thunderbird")
   awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
   awful.util.spawn_with_shell("runonce kmix")
@@ -230,7 +229,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
-    awful.key({ }, "Print", function () awful.util.spawn("scrotum -s") end),
+    awful.key({                   }, "Print", function () awful.util.spawn("scrotum -s") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrotum") end),
 
     awful.key({ modkey,           }, "j",
@@ -243,7 +242,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
+    awful.key({ modkey, "Shift"   }, "w", function () mymainmenu:show() end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -291,8 +290,10 @@ globalkeys = awful.util.table.join(
 
     -- custom shortcuts
     awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
-    awful.key({ modkey,           }, "a",     function () awful.util.spawn(thunderbird) end),
-    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end)
+    awful.key({ modkey,           }, "a",     function () awful.util.spawn("thunderbird") end),
+    awful.key({ modkey,           }, "s",     function () awful.util.spawn("slingscold") end),
+    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end),
+    awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium --app=https://www.netflix.com") end)
 )
 
 clientkeys = awful.util.table.join(
