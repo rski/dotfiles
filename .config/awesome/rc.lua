@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- automatically generated menu with xdg_menu
+xdg_menu = require("archmenu")
 
 
 hostname = io.popen("uname -n"):read()
@@ -122,6 +124,7 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "Applications", xdgmenu },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -242,7 +245,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
-    awful.key({ }, "Print", function () awful.util.spawn("scrotum -s") end),
+    awful.key({                   }, "Print", function () awful.util.spawn("scrotum -s") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrotum") end),
 
     awful.key({ modkey,           }, "j",
@@ -255,7 +258,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
+    awful.key({ modkey, "Shift"   }, "w", function () mymainmenu:show() end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -303,8 +306,10 @@ globalkeys = awful.util.table.join(
 
     -- custom shortcuts
     awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
-    awful.key({ modkey,           }, "a",     function () awful.util.spawn(thunderbird) end),
-    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end)
+    awful.key({ modkey,           }, "a",     function () awful.util.spawn("thunderbird") end),
+    awful.key({ modkey,           }, "s",     function () awful.util.spawn("slingscold") end),
+    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end),
+    awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium --app=https://www.netflix.com") end)
 )
 
 clientkeys = awful.util.table.join(
