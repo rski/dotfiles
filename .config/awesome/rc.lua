@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- automatically generated menu with xdg_menu
+xdg_menu = require("archmenu")
 
 
 --autostart
@@ -109,6 +111,7 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "Applications", xdgmenu },
                                     { "open terminal", terminal }
                                   }
                         })
