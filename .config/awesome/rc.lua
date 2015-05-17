@@ -12,15 +12,29 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 
 
+hostname = io.popen("uname -n"):read()
+
 --autostart
-  awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
-  awful.util.spawn_with_shell("runonce clementine")
-  awful.util.spawn_with_shell("runonce dropbox")
-  awful.util.spawn_with_shell("runonce nm-applet")
-  awful.util.spawn_with_shell("runonce steam")
-  awful.util.spawn_with_shell("runonce thunderbird")
-  awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
-  awful.util.spawn_with_shell("runonce kmix")
+--for all computers
+awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
+awful.util.spawn_with_shell("runonce dropbox")
+awful.util.spawn_with_shell("runonce nm-applet")
+awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
+
+  --thaddeus settings
+  if hostname == "thaddeus" then
+    awful.util.spawn_with_shell("runonce pasystray")
+    awful.util.spawn_with_shell("runonce cbatticon")
+    browser="dwb"
+  end
+
+  if hostname == "nauticus" then
+    awful.util.spawn_with_shell("runonce clementine")
+    awful.util.spawn_with_shell("runonce steam")
+    awful.util.spawn_with_shell("runonce thunderbird")
+    awful.util.spawn_with_shell("runonce kmix")
+    browser="chromium"
+  end
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -63,8 +77,6 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
--- other useful variables
-browser="chromium"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
