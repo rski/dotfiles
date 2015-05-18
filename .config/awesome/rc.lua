@@ -32,8 +32,8 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
 
   if hostname == "nauticus" then
     awful.util.spawn_with_shell("runonce clementine")
-    awful.util.spawn_with_shell("runonce steam")
-    awful.util.spawn_with_shell("runonce thunderbird")
+    --awful.util.spawn_with_shell("runonce steam")
+    --awful.util.spawn_with_shell("runonce thunderbird")
     awful.util.spawn_with_shell("runonce kmix")
     browser="chromium"
   end
