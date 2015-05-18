@@ -309,7 +309,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "a",     function () awful.util.spawn("thunderbird") end),
     awful.key({ modkey,           }, "s",     function () awful.util.spawn("slingscold") end),
     awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end),
-    awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium --app=https://www.netflix.com") end)
+    awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium --app=https://www.netflix.com") end),
+    awful.key({ modkey,           }, "e",     function () awful.util.spawn("chromium --app=https://www.messenger.com") end)
 )
 
 clientkeys = awful.util.table.join(
