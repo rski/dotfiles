@@ -18,8 +18,7 @@ alias addawesome="git add ~/.config/awesome/rc.lua"
 alias genmenu="xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua"
 #alias rm='trash-put'
 
-#TODO: move to another file
 
 if [ -f $HOME/.private_aliases ]; then
-  source $HOME/.private_alises
-if
+  source $HOME/.private_aliases
+fi
