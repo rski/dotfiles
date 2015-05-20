@@ -1,0 +1,25 @@
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias lah='ls -lah'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias mkdir='mkdir -p -v'
+alias remove="yaourt -Rns"
+alias open="xdg-open"
+alias unxz="tar -xvJf"
+alias ungz="tar -zxvf"
+alias colourdiff="colordiff"
+alias lsd="ls -d *(/)"
+alias lsf="ls *(.)"
+alias configawesome="vim .config/awesome/rc.lua"
+alias validawesome="awesome -k ~/.config/awesome/rc.lua"
+alias addawesome="git add ~/.config/awesome/rc.lua"
+alias genmenu="xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua"
+#alias rm='trash-put'
+
+#TODO: move to another file
+
+if [ -f $HOME/.private_aliases ]; then
+  source $HOME/.private_alises
+if
