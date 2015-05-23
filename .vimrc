@@ -29,3 +29,14 @@ augroup filetypedetect
   au BufNewFile,BufRead *.geom,*.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 augroup END
 
+" Use the OS clipboard by default
+set clipboard=unnamed
+
+
+" Copy to X11 primary clipboard
+map <leader>y "*y
+"
+" " Paste from unnamed register and fix indentation
+nmap <leader>p pV`]=
+
+au FileType {make,gitconfig} set noexpandtab sw=4
