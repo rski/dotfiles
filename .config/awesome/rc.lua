@@ -32,9 +32,11 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
 
   if hostname == "nauticus" then
     awful.util.spawn_with_shell("runonce clementine")
-    --awful.util.spawn_with_shell("runonce steam")
+    awful.util.spawn_with_shell("runonce steam")
     --awful.util.spawn_with_shell("runonce thunderbird")
     awful.util.spawn_with_shell("runonce kmix")
+    --fixes the tearing
+    awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
     browser="chromium"
   end
 
