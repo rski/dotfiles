@@ -35,6 +35,7 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
     awful.util.spawn_with_shell("runonce steam")
     --awful.util.spawn_with_shell("runonce thunderbird")
     awful.util.spawn_with_shell("runonce kmix")
+    awful.util.spawn_with_shell("runonce skype")
     --fixes the tearing
     awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
     browser="chromium"
@@ -410,6 +411,8 @@ awful.rules.rules = {
 --     Set Steam to always map on tags number 2 of screen 1.
      { rule = { class = "Steam" },
        properties = { tag = tags[1][4] } },
+     { rule = { class = "Thunderbird" },
+       properties = { tag = tags[1][2] } },
 }
 -- }}}
 
