@@ -11,7 +11,7 @@ syntax on
 "set smartindent
 "set mouse=a
 autocmd FileType tex setlocal spell spelllang=en_gb
-"colorscheme ir_pitch_black
+colorscheme gotham256
 
 "latexsuite
 set grepprg=grep\ -nH\ $*
