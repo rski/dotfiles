@@ -415,6 +415,8 @@ awful.rules.rules = {
        properties = { tag = tags[1][4] } },
      { rule = { class = "Thunderbird" },
        properties = { tag = tags[1][2] } },
+     { rule = { class = "Skype" },
+       properties = { tag = tags[1][3] } },
 }
 -- }}}
 
