@@ -68,7 +68,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/roig/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/powerarrow-darker/theme.lua")
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "lxterminal"
