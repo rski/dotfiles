@@ -118,4 +118,6 @@ theme.tasklist_floating             = ""
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
 
+theme.awesome_icon = "/usr/share/awesome/themes/powerarrow-darker/icons/submenu.png"
+
 return theme
