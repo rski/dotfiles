@@ -13,6 +13,10 @@ local menubar = require("menubar")
 -- automatically generated menu with xdg_menu
 xdg_menu = require("archmenu")
 
+-- set hostnames
+local laptop_hostname = "thaddeus"
+local desktop_hostname = "nauticus"
+
 
 hostname = io.popen("uname -n"):read()
 
@@ -24,14 +28,15 @@ awful.util.spawn_with_shell("runonce nm-applet")
 awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
 
   --thaddeus settings
-  if hostname == "thaddeus" then
+  if hostname == laptop_hostname then
     awful.util.spawn_with_shell("runonce pasystray")
     awful.util.spawn_with_shell("runonce cbatticon")
     awful.util.spawn_with_shell("runonce wicd-client")
     browser="dwb"
+    wibox_position = "bottom"
   end
 
-  if hostname == "nauticus" then
+  if hostname == desktop_hostname then
     awful.util.spawn_with_shell("runonce clementine")
     awful.util.spawn_with_shell("runonce steam")
     --awful.util.spawn_with_shell("runonce thunderbird")
@@ -40,6 +45,7 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
     --fixes the tearing
     awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
     browser="chromium"
+    wibox_position = "top"
   end
 
 -- {{{ Error handling
@@ -88,11 +94,11 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
+    awful.layout.suit.fair,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
@@ -105,7 +111,13 @@ local layouts =
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        if hostname == desktop_hostname then
+            gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        end
+
+        if hostname == laptop_hostname then
+            gears.wallpaper.centered(beautiful.wallpaper, s)
+        end
     end
 end
 -- }}}
@@ -214,7 +226,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = wibox_position, screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -417,6 +429,8 @@ awful.rules.rules = {
        properties = { tag = tags[1][2] } },
      { rule = { class = "Skype" },
        properties = { tag = tags[1][3] } },
+     { rule = { class = "libreoffice" },
+       properties = { tag = tags[1][5] } },
 }
 -- }}}
 
