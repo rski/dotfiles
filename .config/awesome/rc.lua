@@ -42,6 +42,7 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
     --awful.util.spawn_with_shell("runonce thunderbird")
     awful.util.spawn_with_shell("runonce kmix")
     awful.util.spawn_with_shell("runonce skype")
+    awful.util.spawn_with_shell("runonce volumeicon")
     --fixes the tearing
     awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
     browser="chromium"
@@ -75,6 +76,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
+--beautiful.init("/usr/share/awesome/themes/powerarrow-darker/theme.lua")
 beautiful.init(awful.util.getdir("config") .. "/powerarrow-darker/theme.lua")
 
 
@@ -265,6 +267,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
     awful.key({                   }, "Print", function () awful.util.spawn("scrotum -s") end),
     awful.key({                   }, "Scroll_Lock", function () awful.util.spawn("scrotum") end),
+
+    -- pulse
+    awful.key({                   }, "XF86AudioRaiseVolume", function () awful.util.spawn("pulseaudio-ctl up") end),
+    awful.key({                   }, "XF86AudioLowerVolume", function () awful.util.spawn("pulseaudio-ctl down") end),
 
     awful.key({ modkey,           }, "j",
         function ()

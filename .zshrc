@@ -68,6 +68,12 @@ ttyctl -f
 #plugins=(archlinux)
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# bind P and N for EMACS mode prev-next history search
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
 if [ -f $HOME/.britbongaliases ]; then
   source $HOME/.britbongaliases
 fi
