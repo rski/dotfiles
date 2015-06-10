@@ -10,7 +10,7 @@ syntax on
 "set autoindent
 "set smartindent
 "set mouse=a
-autocmd FileType tex setlocal spell spelllang=en_gb
+autocmd FileType tex,text setlocal spell spelllang=en_gb
 colorscheme gotham256
 
 "latexsuite
