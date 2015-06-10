@@ -32,7 +32,7 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
     awful.util.spawn_with_shell("runonce pasystray")
     awful.util.spawn_with_shell("runonce cbatticon")
     awful.util.spawn_with_shell("runonce wicd-client")
-    browser="dwb"
+    browser="chromium"
     wibox_position = "bottom"
   end
 
