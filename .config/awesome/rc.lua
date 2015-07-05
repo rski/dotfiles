@@ -5,6 +5,7 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local lain = require("lain")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -26,10 +27,10 @@ awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
 awful.util.spawn_with_shell("runonce dropbox")
 awful.util.spawn_with_shell("runonce nm-applet")
 awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
+awful.util.spawn_with_shell("runonce pasystray")
 
   --thaddeus settings
   if hostname == laptop_hostname then
-    awful.util.spawn_with_shell("runonce pasystray")
     awful.util.spawn_with_shell("runonce cbatticon")
     awful.util.spawn_with_shell("runonce wicd-client")
     browser="chromium"
@@ -41,8 +42,7 @@ awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_tog
     awful.util.spawn_with_shell("runonce steam")
     --awful.util.spawn_with_shell("runonce thunderbird")
     awful.util.spawn_with_shell("runonce kmix")
-    awful.util.spawn_with_shell("runonce skype")
-    awful.util.spawn_with_shell("runonce volumeicon")
+    --awful.util.spawn_with_shell("runonce skype")
     --fixes the tearing
     awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
     browser="chromium"
@@ -106,7 +106,8 @@ local layouts =
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    awful.layout.suit.magnifier,
+    lain.layout.centerwork,
 }
 -- }}}
 
