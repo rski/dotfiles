@@ -10,7 +10,7 @@ syntax on
 "set autoindent
 "set smartindent
 "set mouse=a
-autocmd FileType tex,text setlocal spell spelllang=en_gb
+"autocmd FileType tex,text setlocal spell spelllang=en_gb
 colorscheme gotham256
 
 "latexsuite
@@ -30,13 +30,13 @@ augroup filetypedetect
 augroup END
 
 " Use the OS clipboard by default
-set clipboard=unnamed
+"set clipboard=unnamed
 
 
 " Copy to X11 primary clipboard
-map <leader>y "*y
+"map <leader>y "*y
 "
 " " Paste from unnamed register and fix indentation
-nmap <leader>p pV`]=
+"nmap <leader>p pV`]=
 
 au FileType {make,gitconfig} set noexpandtab sw=4
