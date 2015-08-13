@@ -35,7 +35,8 @@ awful.util.spawn_with_shell("runonce steam")
 awful.util.spawn_with_shell("runonce kmix")
 --awful.util.spawn_with_shell("runonce skype")
 --fixes the tearing
-awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
+awful.util.spawn_with_shell("runonce compositor")
+awful.util.spawn_with_shell("runonce emacs --daemon")
 browser="chromium"
 wibox_position = "top"
 
