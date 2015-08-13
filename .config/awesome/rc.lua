@@ -26,14 +26,15 @@ hostname = io.popen("uname -n"):read()
 awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
 awful.util.spawn_with_shell("runonce dropbox")
 awful.util.spawn_with_shell("runonce nm-applet")
+awful.util.spawn_with_shell("runonce pcmanfm -d")
 awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
 awful.util.spawn_with_shell("runonce pasystray")
 
   --thaddeus settings
   if hostname == laptop_hostname then
     awful.util.spawn_with_shell("runonce cbatticon")
-    awful.util.spawn_with_shell("runonce wicd-client")
-    browser="chromium"
+    -- awful.util.spawn_with_shell("runonce wicd-client")
+    browser="jumanji"
     wibox_position = "bottom"
   end
 
@@ -119,7 +120,8 @@ if beautiful.wallpaper then
         end
 
         if hostname == laptop_hostname then
-            gears.wallpaper.centered(beautiful.wallpaper, s)
+            gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+            --gears.wallpaper.centered(beautiful.wallpaper, s)
         end
     end
 end
