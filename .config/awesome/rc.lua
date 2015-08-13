@@ -15,7 +15,6 @@ local menubar = require("menubar")
 xdg_menu = require("archmenu")
 
 -- set hostnames
-local laptop_hostname = "thaddeus"
 local desktop_hostname = "nauticus"
 
 
@@ -30,25 +29,15 @@ awful.util.spawn_with_shell("runonce pcmanfm -d")
 awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
 awful.util.spawn_with_shell("runonce pasystray")
 
-  --thaddeus settings
-  if hostname == laptop_hostname then
-    awful.util.spawn_with_shell("runonce cbatticon")
-    -- awful.util.spawn_with_shell("runonce wicd-client")
-    browser="jumanji"
-    wibox_position = "bottom"
-  end
-
-  if hostname == desktop_hostname then
-    awful.util.spawn_with_shell("runonce clementine")
-    awful.util.spawn_with_shell("runonce steam")
-    --awful.util.spawn_with_shell("runonce thunderbird")
-    awful.util.spawn_with_shell("runonce kmix")
-    --awful.util.spawn_with_shell("runonce skype")
-    --fixes the tearing
-    awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
-    browser="chromium"
-    wibox_position = "top"
-  end
+awful.util.spawn_with_shell("runonce clementine")
+awful.util.spawn_with_shell("runonce steam")
+--awful.util.spawn_with_shell("runonce thunderbird")
+awful.util.spawn_with_shell("runonce kmix")
+--awful.util.spawn_with_shell("runonce skype")
+--fixes the tearing
+awful.util.spawn_with_shell("runonce compton -b --backend glx --vsync opengl-swc --paint-on-overlay")
+browser="chromium"
+wibox_position = "top"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
