@@ -28,6 +28,7 @@ hostname = io.popen("uname -n"):read()
 terminal = "lxterminal"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+modkey = "Mod4"
 
 
 common_autostart = { "nm-applet",
@@ -101,18 +102,7 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
 beautiful.init(theme)
-
-
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
 
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -126,7 +116,6 @@ local layouts =
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.max.fullscreen,
 }
--- }}}
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
