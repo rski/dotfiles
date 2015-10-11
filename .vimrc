@@ -11,7 +11,7 @@ syntax on
 "set smartindent
 "set mouse=a
 autocmd FileType tex,text setlocal spell spelllang=en_gb
-colorscheme gotham256
+"colorscheme gotham256
 
 "latexsuite
 set grepprg=grep\ -nH\ $*
@@ -22,7 +22,7 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 
 
 nnoremap ; :
-nnoremap : ;
+"nnoremap : ;
 
 augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
