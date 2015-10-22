@@ -5,39 +5,76 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
-local lain = require("lain")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
--- automatically generated menu with xdg_menu
-xdg_menu = require("archmenu")
 
+local function runonce(program)
+  local runoncebin = "~/bin/runonce"
+  awful.util.spawn_with_shell(runoncebin .. " " .. program)
+end
 -- set hostnames
 local desktop_hostname = "nauticus"
+local gentoo_hostname = "nathaniel"
 
+--keyboard
+awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
 
 hostname = io.popen("uname -n"):read()
 
---autostart
---for all computers
-awful.util.spawn_with_shell("runonce start-pulseaudio-x11")
-awful.util.spawn_with_shell("runonce dropbox")
-awful.util.spawn_with_shell("runonce nm-applet")
-awful.util.spawn_with_shell("runonce pcmanfm -d")
-awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
-awful.util.spawn_with_shell("runonce pasystray")
+-- This is used later as the default terminal and editor to run.
+terminal = "lxterminal"
+editor = os.getenv("EDITOR") or "vim"
+editor_cmd = terminal .. " -e " .. editor
+modkey = "Mod4"
 
-awful.util.spawn_with_shell("runonce clementine")
-awful.util.spawn_with_shell("runonce steam")
---awful.util.spawn_with_shell("runonce thunderbird")
-awful.util.spawn_with_shell("runonce kmix")
---awful.util.spawn_with_shell("runonce skype")
---fixes the tearing
-awful.util.spawn_with_shell("runonce compositor")
-awful.util.spawn_with_shell("runonce emacs --daemon")
-browser="chromium"
+
+common_autostart = { "nm-applet",
+                     "pcmanfm -d",
+                     "emacs --daemon",
+                     "clementine"
+                   }
+nauticus_autostart = { "steam",
+                       "dropbox",
+                       "start-pulseaudio-x11",
+                       "thunderbird",
+                       "kmix",
+                       "~/bin/compositor",
+                     }
+gentoo_autostart = { "pasystray",
+                     "cbatticon",
+                   }
+
+if hostname == desktop_hostname then
+  local_autostart = nauticus_autostart
+  browser = "chromium"
+  theme = awful.util.getdir("config") .. "/powerarrow-darker/theme.lua"
+  xdg_menu = require("archmenu")
+  primaryfm = "dbus-launch pcmanfm"
+  secondaryfm = terminal .. " -e ranger"
+else
+  local_autostart = gentoo_autostart
+  theme = "/usr/share/awesome/themes/zenburn/theme.lua"
+  browser = "firefox"
+  xdg_menu  = ""
+  primaryfm = terminal .. " -e ranger"
+  secondaryfm = "dbus-launch pcmanfm"
+end
+
+--autostart
+for index = 1, #common_autostart do
+  runonce(common_autostart[index])
+end
+for index = 1, #local_autostart do
+  runonce(local_autostart[index])
+end
+--this should be set according to what exists
+--for browser in browsers
+--  if `which $browser`
+--    break
+--browser = $browser
 wibox_position = "top"
 
 -- {{{ Error handling
@@ -65,23 +102,7 @@ do
 end
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
---beautiful.init("/usr/share/awesome/themes/powerarrow-darker/theme.lua")
-beautiful.init(awful.util.getdir("config") .. "/powerarrow-darker/theme.lua")
-
-
--- This is used later as the default terminal and editor to run.
-terminal = "lxterminal"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+beautiful.init(theme)
 
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -93,14 +114,8 @@ local layouts =
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    lain.layout.centerwork,
 }
--- }}}
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
@@ -120,7 +135,7 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names = { 1, 2, 3, 4, 5, 6, 7, 8, 9 },
+  names = { 1, 2, 3, 4, 5, 6},
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -327,7 +342,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",     function () awful.util.spawn(browser) end),
     awful.key({ modkey,           }, "a",     function () awful.util.spawn("thunderbird") end),
     awful.key({ modkey,           }, "s",     function () awful.util.spawn("slingscold") end),
-    awful.key({ modkey,           }, "d",     function () awful.util.spawn("dbus-launch pcmanfm") end),
+    awful.key({ modkey,           }, "d",     function () awful.util.spawn(primaryfm) end),
+    awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn(secondaryfm) end),
     awful.key({ modkey,           }, "w",     function () awful.util.spawn("chromium --app=https://www.netflix.com") end),
     awful.key({ modkey,           }, "e",     function () awful.util.spawn("chromium --app=https://www.messenger.com") end)
 )
@@ -426,6 +442,8 @@ awful.rules.rules = {
 --     Set Steam to always map on tags number 2 of screen 1.
      { rule = { class = "Steam" },
        properties = { tag = tags[1][4] } },
+     { rule = { class = "Zathura" },
+       properties = { tag = tags[1][2] } },
      { rule = { class = "Thunderbird" },
        properties = { tag = tags[1][2] } },
      { rule = { class = "Skype" },
