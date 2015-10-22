@@ -54,7 +54,7 @@ theme.fg_urgent                     = "#CC9393"
 theme.bg_normal                     = "#1A1A1A"
 theme.bg_focus                      = "#313131"
 theme.bg_urgent                     = "#1A1A1A"
-theme.border_width                  = "1"
+--theme.border_width                  = "1"
 theme.border_normal                 = "#3F3F3F"
 theme.border_focus                  = "#7F7F7F"
 theme.border_marked                 = "#CC9393"
@@ -113,7 +113,7 @@ theme.widget_vol_mute               = themedir .. "/icons/vol_mute.png"
 theme.widget_mail                   = themedir .. "/icons/mail.png"
 theme.widget_mail_on                = themedir .. "/icons/mail_on.png"
 
-theme.tasklist_disable_icon         = true
+theme.tasklist_disable_icon         = false
 theme.tasklist_floating             = ""
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
