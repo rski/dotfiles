@@ -17,6 +17,7 @@ alias validawesome="awesome -k ~/.config/awesome/rc.lua"
 alias addawesome="git add ~/.config/awesome/rc.lua"
 alias genmenu="xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua"
 alias cheese="CLUTTER_BACKEND=x11 cheese"
+alias em="emacsclient -t"
 #alias rm='trash-put'
 
 
