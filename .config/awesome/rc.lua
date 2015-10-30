@@ -17,7 +17,6 @@ local function runonce(program)
 end
 -- set hostnames
 local desktop_hostname = "nauticus"
-local gentoo_hostname = "nathaniel"
 
 --keyboard
 awful.util.spawn_with_shell("setxkbmap -layout \"gb, el\" -option \"grp:caps_toggle\"")
@@ -31,44 +30,27 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 
-common_autostart = { "nm-applet",
-                     "pcmanfm -d",
-                     "emacs --daemon",
-                     "clementine"
-                   }
-nauticus_autostart = { "steam",
-                       "dropbox",
-                       "start-pulseaudio-x11",
-                       "thunderbird",
-                       "kmix",
-                       "~/bin/compositor",
-                     }
-gentoo_autostart = { "pasystray",
-                     "cbatticon",
-                   }
+autostart = { "nm-applet",
+              "pcmanfm -d",
+              "emacs --daemon",
+              "clementine",
+              "steam",
+              "dropbox",
+              "start-pulseaudio-x11",
+              "thunderbird",
+              "pasystray",
+              "~/bin/compositor",
+              }
 
-if hostname == desktop_hostname then
-  local_autostart = nauticus_autostart
-  browser = "chromium"
-  theme = awful.util.getdir("config") .. "/powerarrow-darker/theme.lua"
-  xdg_menu = require("archmenu")
-  primaryfm = "dbus-launch pcmanfm"
-  secondaryfm = terminal .. " -e ranger"
-else
-  local_autostart = gentoo_autostart
-  theme = "/usr/share/awesome/themes/zenburn/theme.lua"
-  browser = "firefox"
-  xdg_menu  = ""
-  primaryfm = terminal .. " -e ranger"
-  secondaryfm = "dbus-launch pcmanfm"
-end
+browser = "chromium"
+theme = awful.util.getdir("config") .. "/powerarrow-darker/theme.lua"
+xdg_menu = require("archmenu")
+primaryfm = "dbus-launch pcmanfm"
+secondaryfm = terminal .. " -e ranger"
 
 --autostart
-for index = 1, #common_autostart do
+for index = 1, #autostart do
   runonce(common_autostart[index])
-end
-for index = 1, #local_autostart do
-  runonce(local_autostart[index])
 end
 --this should be set according to what exists
 --for browser in browsers
