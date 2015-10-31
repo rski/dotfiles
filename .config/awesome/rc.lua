@@ -50,7 +50,7 @@ secondaryfm = terminal .. " -e ranger"
 
 --autostart
 for index = 1, #autostart do
-  runonce(common_autostart[index])
+  runonce(autostart[index])
 end
 --this should be set according to what exists
 --for browser in browsers
