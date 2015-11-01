@@ -40,3 +40,12 @@ map <leader>y "*y
 nmap <leader>p pV`]=
 
 au FileType {make,gitconfig} set noexpandtab sw=4
+
+execute pathogen#infect()
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
