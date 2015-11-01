@@ -32,7 +32,6 @@ modkey = "Mod4"
 
 autostart = { "nm-applet",
               "pcmanfm -d",
-              "emacs --daemon",
               "clementine",
               "steam",
               "dropbox",
