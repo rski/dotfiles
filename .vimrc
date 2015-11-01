@@ -11,7 +11,14 @@ syntax on
 "set smartindent
 "set mouse=a
 autocmd FileType tex,text setlocal spell spelllang=en_gb
-"colorscheme gotham256
+
+"from
+"http://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme/5702498#5702498
+try
+  colorscheme gotham256
+catch /^Vim\%((\a\+)\)\=:E185/
+  "don't deal with it for now
+endtry
 
 "latexsuite
 set grepprg=grep\ -nH\ $*
@@ -43,6 +50,7 @@ au FileType {make,gitconfig} set noexpandtab sw=4
 
 execute pathogen#infect()
 
+"syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
