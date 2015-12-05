@@ -15,7 +15,7 @@ alias lsf="ls *(.)"
 alias validawesome="awesome -k ~/.config/awesome/rc.lua"
 alias genmenu="xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua"
 alias cheese="CLUTTER_BACKEND=x11 cheese"
-#alias rm='trash-put'
+alias aura="sudo aura"
 
 
 if [ -f $HOME/.private_aliases ]; then
