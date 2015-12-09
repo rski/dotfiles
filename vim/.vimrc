@@ -1,3 +1,4 @@
+set nocompatible
 set wrapscan
 set relativenumber
 set number
