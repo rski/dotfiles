@@ -5,7 +5,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias mkdir='mkdir -p -v'
-alias remove="yaourt -Rns"
 alias open="xdg-open"
 alias unxz="tar -xvJf"
 alias ungz="tar -zxvf"
