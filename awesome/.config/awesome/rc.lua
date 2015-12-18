@@ -37,6 +37,7 @@ autostart = { "nm-applet",
               "start-pulseaudio-x11",
               "thunderbird",
               "pasystray",
+              "hexchat",
               "~/bin/compositor",
               }
 
