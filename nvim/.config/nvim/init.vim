@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'davidhalter/jedi-vim'
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -33,9 +35,9 @@ au FileType {make,gitconfig} set noexpandtab sw=4
 au FileType {make,gitconfig} set sw=4 softtabstop=4
 
 "syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
