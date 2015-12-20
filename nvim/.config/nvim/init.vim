@@ -1,4 +1,3 @@
-set nocompatible
 set wrapscan
 set relativenumber
 set number
@@ -6,11 +5,7 @@ filetype plugin indent on
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-filetype plugin on
 syntax on
-"set autoindent
-"set smartindent
-"set mouse=a
 autocmd FileType tex,text setlocal spell spelllang=en_gb
 
 "from
@@ -18,43 +13,24 @@ autocmd FileType tex,text setlocal spell spelllang=en_gb
 try
   colorscheme gotham256
 catch /^Vim\%((\a\+)\)\=:E185/
-  "don't deal with it for now
+  colorscheme ron
 endtry
 
-"latexsuite
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
-let g:Tex_DefaultTargetFormat="pdf"
-"something about latexsuite installing in some directory runtimepath something
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-
-
 nnoremap ; :
-"nnoremap : ;
 
 augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
   au BufNewFile,BufRead *.geom,*.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 augroup END
 
-" Use the OS clipboard by default
-set clipboard=unnamed
-
-
-" Copy to X11 primary clipboard
-map <leader>y "*y
-"
-" " Paste from unnamed register and fix indentation
-nmap <leader>p pV`]=
 
 au FileType {make,gitconfig} set noexpandtab sw=4
-
-execute pathogen#infect()
+au FileType {make,gitconfig} set sw=4 softtabstop=4
 
 "syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
