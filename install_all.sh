@@ -8,6 +8,7 @@ programs=('terminator'
           'lxterminal'
           'vim'
           'zsh'
+	  'nvim'
           )
 for i in "${programs[@]}"
 do
