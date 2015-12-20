@@ -1,3 +1,8 @@
+call plug#begin('~/.config/nvim/plugged')
+
+
+call plug#end()
+
 set wrapscan
 set relativenumber
 set number
