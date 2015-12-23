@@ -32,7 +32,7 @@ augroup END
 
 
 au FileType {make,gitconfig} set noexpandtab sw=4
-au FileType {make,gitconfig} set sw=4 softtabstop=4
+au FileType {python} set sw=4 softtabstop=4
 
 "syntastic
 set statusline+=%#warningmsg#
