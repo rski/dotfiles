@@ -6,7 +6,7 @@ NVIM_FOLDER="nvim/.config/nvim"
 function submodule_install { 
   git submodule update --init --recursive
   mkdir -p $NVIM_FOLDER/autoload
-  cp submodules/vim-plug/plug.vim $NVIM_FOLDER/autoload/
+  ln -s `pwd`/submodules/vim-plug/plug.vim `pwd`/$NVIM_FOLDER/autoload/
   nvim +PlugInstall +qall
 }
 
