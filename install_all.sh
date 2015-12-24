@@ -4,6 +4,7 @@ NVIM_FOLDER="nvim/.config/nvim"
 # only a single file is needed from some submodules' repo
 # so we put the submodules in submodules/ and then copy the file needed
 function submodule_install { 
+  git submodule update --init --recursive
   mkdir -p $NVIM_FOLDER/autoload
   cp submodules/vim-plug/plug.vim $NVIM_FOLDER/autoload/
 }
