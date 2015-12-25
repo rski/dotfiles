@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
