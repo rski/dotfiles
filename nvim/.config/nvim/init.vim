@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
+Plug 'sickill/vim-monokai'
 
 call plug#end()
 
@@ -16,13 +17,7 @@ set softtabstop=2
 syntax on
 autocmd FileType tex,text setlocal spell spelllang=en_gb
 
-"from
-"http://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme/5702498#5702498
-try
-  colorscheme gotham256
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme ron
-endtry
+colorscheme monokai
 
 nnoremap ; :
 
