@@ -44,7 +44,7 @@ autostart = { "nm-applet",
 
 --autostart
 for index = 1, #autostart do
-  runonce(first(autostart[index]))
+  runonce(autostart[index])
 end
 
 browser = "chromium"
