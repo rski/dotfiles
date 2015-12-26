@@ -11,10 +11,6 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
-local function runonce(program)
-  local runoncebin = "~/bin/runonce"
-  awful.util.spawn_with_shell(runoncebin .. " " .. program)
-end
 -- set hostnames
 local desktop_hostname = "nauticus"
 
@@ -29,6 +25,11 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
+-- return the first chars of a string split by space
+local function runonce(program)
+  local runoncebin = "~/bin/runonce"
+  awful.util.spawn_with_shell(runoncebin .. " " .. program)
+end
 
 autostart = { "nm-applet",
               "pcmanfm -d",
@@ -41,16 +42,17 @@ autostart = { "nm-applet",
               "~/bin/compositor",
               }
 
+--autostart
+for index = 1, #autostart do
+  runonce(first(autostart[index]))
+end
+
 browser = "chromium"
 theme = awful.util.getdir("config") .. "/powerarrow-darker/theme.lua"
 xdg_menu = require("archmenu")
 primaryfm = "dbus-launch pcmanfm"
 secondaryfm = terminal .. " -e ranger"
 
---autostart
-for index = 1, #autostart do
-  runonce(autostart[index])
-end
 --this should be set according to what exists
 --for browser in browsers
 --  if `which $browser`
