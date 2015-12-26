@@ -48,17 +48,14 @@ for index = 1, #autostart do
 end
 
 browser = "chromium"
-theme = awful.util.getdir("config") .. "/powerarrow-darker/theme.lua"
 xdg_menu = require("archmenu")
 primaryfm = "dbus-launch pcmanfm"
 secondaryfm = terminal .. " -e ranger"
 
---this should be set according to what exists
---for browser in browsers
---  if `which $browser`
---    break
---browser = $browser
 wibox_position = "top"
+
+theme = awful.util.getdir("config") .. "/theme.lua"
+beautiful.init(theme)
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -84,8 +81,6 @@ do
     end)
 end
 -- }}}
-
-beautiful.init(theme)
 
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
