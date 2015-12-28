@@ -1,10 +1,11 @@
 call plug#begin('~/.config/nvim/plugged')
-
-Plug 'davidhalter/jedi-vim'
-Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe'
-Plug 'sickill/vim-monokai'
-
+  Plug 'davidhalter/jedi-vim'
+  Plug 'scrooloose/syntastic'
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'tomasr/molokai'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'msanders/snipmate.vim'
 call plug#end()
 
 set wrapscan
@@ -17,7 +18,7 @@ set softtabstop=2
 syntax on
 autocmd FileType tex,text setlocal spell spelllang=en_gb
 
-colorscheme monokai
+colorscheme molokai
 
 nnoremap ; :
 
