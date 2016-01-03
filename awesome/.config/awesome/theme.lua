@@ -11,5 +11,6 @@ theme.tasklist_disable_icon = true
 theme.wallpaper = awful.util.getdir("config") .. "/wall.png"
 theme.awesome_icon = "/usr/share/awesome/themes/powerarrow-darker/icons/submenu.png"
 theme.border_width = "0"
+theme.taglist_font="Tengwar Annatar 8"
 
 return theme
