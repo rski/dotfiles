@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'msanders/snipmate.vim'
+  Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 
 set wrapscan
