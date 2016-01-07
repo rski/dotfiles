@@ -53,3 +53,12 @@ noremap <leader>t :set number!<cr> <bar> :set relativenumber!<cr>
 
 "upercase word
 nnoremap <leader>u viwU
+
+inoremap jj <esc>
+
+inoremap <esc> <nop>
+
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+noremap <left> <nop>
