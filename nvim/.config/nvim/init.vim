@@ -40,7 +40,16 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"cut" mode
-noremap <F2> :set number!<cr> <bar> :set relativenumber!<cr>
+
+let mapleader = "/"
 
 cmap w!! w !sudo tee > /dev/null % <cr>
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"cut" mode
+noremap <leader>t :set number!<cr> <bar> :set relativenumber!<cr>
+
+"upercase word
+nnoremap <leader>u viwU
