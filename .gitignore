@@ -1,2 +1,4 @@
 nvim/.config/nvim/autoload
 nvim/.config/nvim/plugged
+archmenu.lua
+wall.png

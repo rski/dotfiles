@@ -13,4 +13,4 @@
 	prompt = false
 [alias]
 	unstage = reset HEAD --
-
+	s = status
