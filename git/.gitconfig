@@ -3,5 +3,14 @@
 	email = rom.skiad@gmail.com
 [push]
 	default = simple
-[status]
-	showUntrackedFiles = no
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	unstage = reset HEAD --
+
