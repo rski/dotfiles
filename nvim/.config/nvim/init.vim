@@ -7,7 +7,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'msanders/snipmate.vim'
   Plug 'bronson/vim-trailing-whitespace'
-  Plug 'vim-scripts/sudo.vim'
 call plug#end()
 
 set wrapscan
@@ -41,5 +40,7 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"reopen a file with elevated privileges, depends on sudo.vim
-cmap fck e sudo:%
+"cut" mode
+noremap <F2> :set number!<cr> <bar> :set relativenumber!<cr>
+
+cmap w!! w !sudo tee > /dev/null % <cr>
