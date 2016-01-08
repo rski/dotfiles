@@ -30,7 +30,7 @@ augroup END
 
 
 au FileType {make,gitconfig} set noexpandtab sw=4
-au FileType {python} set sw=4 softtabstop=4
+au FileType python set softtabstop=4 expandtab shiftwidth=4
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -41,7 +41,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-let mapleader = "/"
+let mapleader = ","
 
 cmap w!! w !sudo tee > /dev/null % <cr>
 
