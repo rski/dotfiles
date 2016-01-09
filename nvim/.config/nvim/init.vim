@@ -73,6 +73,8 @@ let g:vimwiki_list = [main_wiki]
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gps :Gpush<cr>
+nnoremap <leader>gpl :Gpull<cr>
 
 "status line
 set statusline=%f\ -\ FileType:\ %y\ -\ %{fugitive#statusline()}
