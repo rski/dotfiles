@@ -69,7 +69,10 @@ let main_wiki.path = "~/Documents/vimwiki"
 let main_wiki.path_html = "~/Documents/vimwiki/html"
 let g:vimwiki_list = [main_wiki]
 
-"figutive
+"fugitive
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gc :Gcommit<cr>
+
+"status line
+set statusline=%f\ -\ FileType:\ %y\ -\ %{fugitive#statusline()}
