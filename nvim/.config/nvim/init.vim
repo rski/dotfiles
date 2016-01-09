@@ -28,12 +28,6 @@ colorscheme molokai
 
 nnoremap ; :
 
-augroup filetypedetect
-  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
-  au BufNewFile,BufRead *.geom,*.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
-augroup END
-
-
 au FileType {make,gitconfig} set noexpandtab sw=4
 au FileType python set softtabstop=4 expandtab shiftwidth=4
 
