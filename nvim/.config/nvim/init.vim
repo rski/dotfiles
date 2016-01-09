@@ -7,12 +7,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'msanders/snipmate.vim'
   Plug 'bronson/vim-trailing-whitespace'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 set wrapscan
 set relativenumber
 set number
 filetype plugin indent on
+filetype plugin on
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -55,6 +57,7 @@ noremap <leader>t :set number!<cr> <bar> :set relativenumber!<cr>
 nnoremap <leader>u viwU
 
 inoremap jj <esc>
+inoremap jk <esc>:w<cr>
 
 inoremap <esc> <nop>
 
@@ -62,3 +65,9 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 noremap <left> <nop>
+
+let main_wiki = {}
+let main_wiki.path = "~/Documents/vimwiki"
+let main_wiki.path_html = "~/Documents/vimwiki/html"
+
+let g:vimwiki_list = [main_wiki]
