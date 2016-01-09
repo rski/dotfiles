@@ -36,10 +36,6 @@ augroup filetypedetection
 augroup END
 
 "syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -77,4 +73,9 @@ nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
 
 "status line
-set statusline=%f\ -\ FileType:\ %y\ -\ %{fugitive#statusline()}
+set statusline+=%f\ -\ FileType:\ %y
+set statusline+=%{fugitive#statusline()}
+"syntastic statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
