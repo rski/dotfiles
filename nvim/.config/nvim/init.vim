@@ -22,14 +22,17 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 syntax on
-autocmd FileType tex,text setlocal spell spelllang=en_gb
 
 colorscheme molokai
 
 nnoremap ; :
 
-au FileType {make,gitconfig} set noexpandtab sw=4
-au FileType python set softtabstop=4 expandtab shiftwidth=4
+augroup filetypedetection
+  autocmd!
+  autocmd FileType tex,text setlocal spell spelllang=en_gb
+  autocmd FileType {make,gitconfig} set noexpandtab sw=4
+  autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
+augroup END
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -38,7 +41,6 @@ set statusline+=%*
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 
 let mapleader = ","
 
@@ -55,9 +57,7 @@ nnoremap <leader>u viwU
 
 inoremap jj <esc>
 inoremap jk <esc>:w<cr>
-
 inoremap <esc> <nop>
-
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
@@ -66,5 +66,4 @@ noremap <left> <nop>
 let main_wiki = {}
 let main_wiki.path = "~/Documents/vimwiki"
 let main_wiki.path_html = "~/Documents/vimwiki/html"
-
 let g:vimwiki_list = [main_wiki]
