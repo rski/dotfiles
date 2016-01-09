@@ -1,3 +1,6 @@
+if !has('nvim')
+  source ~/.config/nvim/autoload/plug.vim
+end
 call plug#begin('~/.config/nvim/plugged')
   Plug 'davidhalter/jedi-vim'
   Plug 'scrooloose/syntastic'
