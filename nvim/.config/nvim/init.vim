@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'msanders/snipmate.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'vimwiki/vimwiki'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set wrapscan
@@ -67,3 +68,8 @@ let main_wiki = {}
 let main_wiki.path = "~/Documents/vimwiki"
 let main_wiki.path_html = "~/Documents/vimwiki/html"
 let g:vimwiki_list = [main_wiki]
+
+"figutive
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gc :Gcommit<cr>
