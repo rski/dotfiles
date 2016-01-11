@@ -2,7 +2,9 @@ if !has('nvim')
   source ~/.config/nvim/autoload/plug.vim
 end
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'davidhalter/jedi-vim'
+  if has('nvim')
+    Plug 'davidhalter/jedi-vim'
+  end
   Plug 'scrooloose/syntastic'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'tomasr/molokai'
@@ -12,6 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
+  Plug 'ervandew/supertab'
+  Plug 'ap/vim-css-color'
+  Plug 'majutsushi/tagbar'
 call plug#end()
 
 set wrapscan
@@ -38,6 +43,7 @@ augroup END
 "syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_puppet_puppetlint_args = "--no-documentation-check"
 
 let mapleader = ","
 
@@ -71,6 +77,10 @@ nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
+
+"tagbar
+let g:tagbar_autofocus = 1
+nnoremap <leader>l :TagbarToggle<cr>
 
 "status line
 set statusline+=%f
