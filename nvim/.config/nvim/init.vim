@@ -70,8 +70,12 @@ noremap <left> <nop>
 
 let main_wiki = {}
 let main_wiki.path = "~/Documents/vimwiki"
-let main_wiki.path_html = "~/Documents/vimwiki/html"
+let main_wiki.path_html = "~/Documents/vimwiki/html/"
 let g:vimwiki_list = [main_wiki]
+augroup l:vimwiki
+  autocmd!
+  autocmd BufWritePost *.wiki :Vimwiki2HTML
+augroup END
 
 "fugitive
 nnoremap <leader>gs :Gstatus<cr>
