@@ -16,7 +16,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
-  Plug 'majutsushi/tagbar'
+  if executable('ctags')
+    Plug 'majutsushi/tagbar'
+  end
 call plug#end()
 
 set wrapscan
@@ -78,9 +80,11 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
 
-"tagbar
-let g:tagbar_autofocus = 1
-nnoremap <leader>l :TagbarToggle<cr>
+if executable('ctags')
+  "tagbar
+  let g:tagbar_autofocus = 1
+  nnoremap <leader>l :TagbarToggle<cr>
+end
 
 "status line
 set statusline+=%f
