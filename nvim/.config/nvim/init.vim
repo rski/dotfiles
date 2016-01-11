@@ -2,7 +2,9 @@ if !has('nvim')
   source ~/.config/nvim/autoload/plug.vim
 end
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'davidhalter/jedi-vim'
+  if has('nvim')
+    Plug 'davidhalter/jedi-vim'
+  end
   Plug 'scrooloose/syntastic'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'tomasr/molokai'
@@ -12,6 +14,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
+  Plug 'ervandew/supertab'
+  Plug 'ap/vim-css-color'
+  if executable('ctags')
+    Plug 'majutsushi/tagbar'
+  end
 call plug#end()
 
 set wrapscan
@@ -38,6 +45,7 @@ augroup END
 "syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_puppet_puppetlint_args = "--no-documentation-check"
 
 let mapleader = ","
 
@@ -62,15 +70,25 @@ noremap <left> <nop>
 
 let main_wiki = {}
 let main_wiki.path = "~/Documents/vimwiki"
-let main_wiki.path_html = "~/Documents/vimwiki/html"
+let main_wiki.path_html = "~/Documents/vimwiki/html/"
 let g:vimwiki_list = [main_wiki]
+augroup l:vimwiki
+  autocmd!
+  autocmd BufWritePost *.wiki :Vimwiki2HTML
+augroup END
 
 "fugitive
 nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gd :Gvdiff<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
+
+if executable('ctags')
+  "tagbar
+  let g:tagbar_autofocus = 1
+  nnoremap <leader>l :TagbarToggle<cr>
+end
 
 "status line
 set statusline+=%f
