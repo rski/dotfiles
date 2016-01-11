@@ -79,7 +79,7 @@ augroup END
 
 "fugitive
 nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gd :Gvdiff<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
