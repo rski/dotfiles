@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	editor = vim
+	excludesfile = /home/rski/.gitignore
 [diff]
 	tool = vimdiff
 [merge]
