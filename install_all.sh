@@ -7,9 +7,7 @@ function submodule_install {
   git submodule update --init --recursive
   mkdir -p $NVIM_FOLDER/autoload
   ln -s `pwd`/submodules/vim-plug/plug.vim `pwd`/$NVIM_FOLDER/autoload/
-  vim +PlugInstall +qall
 }
-
 submodule_install
 
 TARGET=$HOME
@@ -26,3 +24,5 @@ for i in "${programs[@]}"
 do
   stow $i -t $TARGET
 done
+
+vim +PlugInstall +qall
