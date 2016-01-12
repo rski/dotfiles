@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
+  Plug 'EinfachToll/DidYouMean'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
