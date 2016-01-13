@@ -61,6 +61,9 @@ noremap <leader>t :set number!<cr> <bar> :set relativenumber!<cr>
 "upercase word
 nnoremap <leader>u viwU
 
+"split line
+nnoremap <c-j> i<enter><esc>
+
 inoremap jj <esc>
 inoremap jk <esc>:w<cr>
 inoremap <esc> <nop>
