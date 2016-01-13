@@ -91,8 +91,10 @@ nnoremap <leader>gpl :Gpull<cr>
 if executable('ctags')
   "tagbar
   let g:tagbar_autofocus = 1
-  nnoremap <leader>l :TagbarToggle<cr>
+  nnoremap <leader>ll :TagbarToggle<cr>
 end
+
+nnoremap <leader>tt :NERDTreeToggle<cr>
 
 "status line
 set statusline+=%f
