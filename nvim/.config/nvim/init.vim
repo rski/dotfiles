@@ -26,7 +26,6 @@ end
 call plug#end()
 
 set wrapscan
-set relativenumber
 set number
 filetype plugin indent on
 filetype plugin on
@@ -59,7 +58,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "cut" mode
-noremap <leader>t :set number!<cr> <bar> :set relativenumber!<cr>
+noremap <leader>t :set number!<cr>
 
 "upercase word
 nnoremap <leader>u viwU
