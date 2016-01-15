@@ -20,6 +20,7 @@ end
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
   Plug 'EinfachToll/DidYouMean'
+  Plug 'airblade/vim-gitgutter'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
@@ -33,6 +34,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 syntax on
+
+"ignore files
+set wildignore=*.swp,*.pyc
 
 colorscheme molokai
 
@@ -108,4 +112,6 @@ set statusline+=\ %*
 
 if !has('nvim')
   set laststatus=2
+  set nocompatible
+  let g:airline_theme='behelit'
 end
