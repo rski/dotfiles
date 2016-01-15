@@ -13,7 +13,6 @@ end
   Plug 'tomasr/molokai'
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'msanders/snipmate.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
@@ -21,6 +20,9 @@ end
   Plug 'ap/vim-css-color'
   Plug 'EinfachToll/DidYouMean'
   Plug 'airblade/vim-gitgutter'
+  "znipeddy znabbb :DDDD
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
@@ -102,6 +104,13 @@ end
 
 nnoremap <leader>ll :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.pyc$']
+
+"Utilsnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "status line
 set statusline+=%f
