@@ -97,10 +97,11 @@ nnoremap <leader>gpl :Gpull<cr>
 if executable('ctags')
   "tagbar
   let g:tagbar_autofocus = 1
-  nnoremap <leader>ll :TagbarToggle<cr>
+  nnoremap <leader>tt :TagbarToggle<cr>
 end
 
-nnoremap <leader>tt :NERDTreeToggle<cr>
+nnoremap <leader>ll :NERDTreeToggle<cr>
+let NERDTreeIgnore = ['\.pyc$']
 
 "status line
 set statusline+=%f
