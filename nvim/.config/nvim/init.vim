@@ -5,9 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
   if has('nvim')
     Plug 'davidhalter/jedi-vim'
   end
-  if !has('nvim')
-    Plug 'vim-airline/vim-airline'
-end
+  Plug 'vim-airline/vim-airline'
   Plug 'scrooloose/syntastic'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'tomasr/molokai'
@@ -120,8 +118,9 @@ set statusline+=\ %#warningmsg#
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ %*
 
+let g:airline_theme='behelit'
+
 if !has('nvim')
   set laststatus=2
   set nocompatible
-  let g:airline_theme='behelit'
 end
