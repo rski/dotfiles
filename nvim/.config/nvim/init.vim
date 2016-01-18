@@ -44,7 +44,7 @@ nnoremap ; :
 
 augroup filetypedetection
   autocmd!
-  autocmd FileType tex,text setlocal spell spelllang=en_gb
+  autocmd FileType tex,text,vimwiki setlocal spell spelllang=en_gb
   autocmd FileType {make,gitconfig} set noexpandtab sw=4
   autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
 augroup END
