@@ -84,7 +84,7 @@ let main_wiki.path_html = "~/Documents/vimwiki/html/"
 let g:vimwiki_list = [main_wiki]
 augroup l:vimwiki
   autocmd!
-  autocmd BufWritePost *.wiki :Vimwiki2HTML
+  autocmd BufWritePost *.wiki :silent! Vimwiki2HTML
 augroup END
 
 "fugitive
