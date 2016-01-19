@@ -119,10 +119,9 @@ nnoremap <leader>ll :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
-"Utilsnips {{{
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-t>"
+"Ultisnips {{{
+" Trigger configuration. Do not use <tab> if you use YCM
+let g:UltiSnipsExpandTrigger="<c-x>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
