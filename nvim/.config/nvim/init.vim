@@ -4,9 +4,7 @@ end
 
 " plugins {{{
 call plug#begin('~/.config/nvim/plugged')
-  if has('nvim')
-    Plug 'davidhalter/jedi-vim'
-  end
+  Plug 'davidhalter/jedi-vim'
   Plug 'vim-airline/vim-airline'
   Plug 'scrooloose/syntastic'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -51,6 +49,7 @@ augroup filetypedetection
   autocmd FileType tex,text,vimwiki setlocal spell spelllang=en_gb
   autocmd FileType {make,gitconfig} set noexpandtab sw=4
   autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
+  autocmd Filetype python set completeopt-=preview
 augroup END
 "}}}
 
@@ -121,9 +120,7 @@ let NERDTreeIgnore = ['\.pyc$']
 
 "Ultisnips {{{
 " Trigger configuration. Do not use <tab> if you use YCM
-let g:UltiSnipsExpandTrigger="<c-x>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-e>"
 " }}}
 
 "status line {{{
