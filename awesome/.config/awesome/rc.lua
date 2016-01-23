@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local pomodoro = require("pomodoro")
 
 -- set hostnames
 local desktop_hostname = "nauticus"
@@ -226,6 +227,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    pomodoro.init()
+    right_layout:add(pomodoro.icon_widget)
+    right_layout:add(pomodoro.widget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
