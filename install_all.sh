@@ -19,6 +19,7 @@ programs=('terminator'
           'vim'
           'zsh'
 	  'nvim'
+          'spacemacs'
           )
 for i in "${programs[@]}"
 do
