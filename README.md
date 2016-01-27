@@ -1,6 +1,6 @@
 # dotfiles
 
-Have stow installed and run ./install_all.sh
+make all will install everything and initiate the vim pluggins
 
 ## Awesome requires:
 

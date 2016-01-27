@@ -1,4 +1,4 @@
-nvim/.config/nvim/autoload
-nvim/.config/nvim/plugged
+nvim/autoload
+nvim/plugged
 archmenu.lua
 wall.png
