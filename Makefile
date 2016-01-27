@@ -3,14 +3,14 @@
 makelink = ln -sf `pwd`
 configdir = ${HOME}/.config
 
-all: submodules vim wm lxterminal vimpluggins spacemacs aliases zsh gitcfg
+all: submodules vim wm lxterminal spacemacs aliases zsh gitcfg
 
 
 submodules:
 	  git submodule update --init --recursive
 
 
-vim: vimrc vimpluggins
+vim: vimrc vimplugins
 
 
 vimrc:
@@ -18,7 +18,7 @@ vimrc:
 	$(makelink)/nvim $(configdir)
 
 
-vimpluggins:
+vimplugins:
 	mkdir -p nvim/autoload
 	$(makelink)/submodules/vim-plug/plug.vim nvim/autoload/
 	vim +PlugInstall +qall
