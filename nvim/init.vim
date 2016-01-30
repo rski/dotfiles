@@ -51,6 +51,7 @@ augroup filetypedetection
   autocmd FileType {make,gitconfig} set noexpandtab sw=4
   autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
   autocmd Filetype python set completeopt-=preview
+  autocmd Filetype python set makeprg=python\ %
 augroup END
 "}}}
 
@@ -71,6 +72,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "cut" mode
 noremap <leader>t :set number!<cr>
+
+" make
+noremap <leader>m :make<cr>
 
 "upercase word
 nnoremap <leader>u viwU
