@@ -10,7 +10,11 @@ theme = themeblock()
 theme.tasklist_disable_icon = true
 theme.wallpaper = awful.util.getdir("config") .. "/wall.png"
 theme.awesome_icon = "/usr/share/awesome/themes/powerarrow-darker/icons/submenu.png"
-theme.border_width = "0"
 theme.taglist_font="Tengwar Annatar 8"
+
+
+theme.border_width = "5"
+--theme.border_normal4D95F2
+theme.border_focus   = "#295082"
 
 return theme
