@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
+  Plug 'hynek/vim-python-pep8-indent'
 call plug#end()
 " }}}
 
