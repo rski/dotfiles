@@ -6,6 +6,7 @@ end
 call plug#begin('~/.config/nvim/plugged')
   Plug 'davidhalter/jedi-vim'
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'scrooloose/syntastic'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'tomasr/molokai'
