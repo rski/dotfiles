@@ -40,6 +40,7 @@ autostart = { "nm-applet",
               "thunderbird",
               "pasystray",
               "~/bin/compositor",
+              "emacs --daemon",
               }
 
 --autostart
@@ -324,7 +325,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "a",     function () awful.util.spawn("thunderbird") end),
     awful.key({ modkey,           }, "s",     function () awful.util.spawn("slingscold") end),
     awful.key({ modkey,           }, "d",     function () awful.util.spawn(primaryfm) end),
-    awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn(secondaryfm) end)
+    awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn(secondaryfm) end),
+    awful.key({ modkey,           }, "e",     function () awful.util.spawn("emacsclient -c") end)
 )
 
 clientkeys = awful.util.table.join(
