@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
   "znipeddy znabbb :DDDD
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  Plug 'takac/vim-hardtime'
+  Plug 'takac/vim-commandcaps'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
@@ -137,6 +139,10 @@ set statusline+=\ %#warningmsg#
 set statusline+=\ %{SyntasticStatuslineFlag()}
 set statusline+=\ %*
 let g:airline_theme='behelit'
+" }}}
+
+"hardtime {{{
+let g:hardtime_default_on = 1
 " }}}
 
 " vim specific settings {{{
