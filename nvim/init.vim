@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'honza/vim-snippets'
   Plug 'takac/vim-hardtime'
   Plug 'takac/vim-commandcaps'
+  Plug 'kien/rainbow_parentheses.vim'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
@@ -143,6 +144,15 @@ let g:airline_theme='behelit'
 
 "hardtime {{{
 let g:hardtime_default_on = 1
+" }}}
+
+"rainbow paren {{{
+augroup rainbowparen
+  autocmd!
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadRound
+augroup END
 " }}}
 
 " vim specific settings {{{
