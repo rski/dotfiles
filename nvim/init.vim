@@ -143,7 +143,7 @@ let g:airline_theme='behelit'
 " }}}
 
 "hardtime {{{
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 " }}}
 
 "rainbow paren {{{
