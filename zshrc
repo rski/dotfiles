@@ -6,7 +6,7 @@ unsetopt beep
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/rski/.zshrc'
 
-autoload -Uz compinit 
+autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
@@ -24,6 +24,7 @@ autoload colors; colors
 
 #exports
 export TERM=xterm-256color
+export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 
 export EDITOR=vim
 #fix shitty ls colours
