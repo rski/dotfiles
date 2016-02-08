@@ -162,4 +162,10 @@ if !has('nvim')
 end
 " }}}
 
+"swap files dir
+"set so that they don't clutter projects
 set directory=~/.tmp
+
+"vim inherits the terminal name
+"now terminal windows get a title based on the filename
+set title
