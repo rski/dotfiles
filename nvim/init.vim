@@ -161,3 +161,5 @@ if !has('nvim')
   set nocompatible
 end
 " }}}
+
+set directory=~/.tmp
