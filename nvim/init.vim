@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-markdown'
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
   Plug 'EinfachToll/DidYouMean'
@@ -52,7 +53,6 @@ set wildignore=*.swp,*.pyc
 augroup filetypedetection
   autocmd!
   "vanilla vim recognises *.md files as modula2
-  autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
   autocmd FileType tex,text,vimwiki,markdown setlocal spell spelllang=en_gb
   autocmd FileType {make,gitconfig} set noexpandtab sw=4
   autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
