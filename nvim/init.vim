@@ -51,7 +51,9 @@ set wildignore=*.swp,*.pyc
 " per filetype settings {{{
 augroup filetypedetection
   autocmd!
-  autocmd FileType tex,text,vimwiki setlocal spell spelllang=en_gb
+  "vanilla vim recognises *.md files as modula2
+  autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_gb
+  autocmd FileType tex,text,vimwiki,markdown setlocal spell spelllang=en_gb
   autocmd FileType {make,gitconfig} set noexpandtab sw=4
   autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
   autocmd Filetype python set completeopt-=preview
