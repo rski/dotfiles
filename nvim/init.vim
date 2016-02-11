@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
+  Plug 'tpope/vim-dispatch'
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
   Plug 'EinfachToll/DidYouMean'
@@ -80,7 +81,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 noremap <leader>t :set number!<cr>
 
 " make
-noremap <leader>m :make<cr>
+noremap <leader>mm :Make<cr>
+noremap <leader>mo :Copen<cr>
 
 "upercase word
 nnoremap <leader>u viwU
