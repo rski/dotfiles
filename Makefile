@@ -54,3 +54,7 @@ gitcfg:
 
 zsh:
 	$(makelink)/zshrc ${HOME}/.zshrc
+
+
+tmux:
+	$(makelink)/tmux.conf ${HOME}/.tmux.conf
