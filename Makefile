@@ -15,12 +15,13 @@ vim: vimrc vimplugins
 
 vimrc:
 	$(makelink)/nvim/init.vim ${HOME}/.vimrc
-	$(makelink)/nvim $(configdir)
+	mkdir -p ${HOME}/.config/nvim
+	$(makelink)/nvim/init.vim ${HOME}/.config/nvim/init.vim
 
 
 vimplugins:
-	mkdir -p nvim/autoload
-	$(makelink)/submodules/vim-plug/plug.vim nvim/autoload/
+	mkdir -p ${HOME}/.config/nvim/autoload
+	$(makelink)/submodules/vim-plug/plug.vim ${HOME}/.config/nvim/autoload
 	vim +PlugInstall +qall
 
 
