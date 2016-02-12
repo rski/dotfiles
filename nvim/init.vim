@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'takac/vim-hardtime'
   Plug 'takac/vim-commandcaps'
   Plug 'kien/rainbow_parentheses.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   if executable('ctags')
     Plug 'majutsushi/tagbar'
   end
