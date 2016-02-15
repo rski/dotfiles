@@ -8,7 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'scrooloose/syntastic'
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+  Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
   Plug 'tomasr/molokai'
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
