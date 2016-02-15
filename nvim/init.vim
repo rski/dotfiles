@@ -134,7 +134,9 @@ let NERDTreeIgnore = ['\.pyc$']
 
 "Ultisnips {{{
 " Trigger configuration. Do not use <tab> if you use YCM
-let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsExpandTrigger="<leader>e"
+let g:UltiSnipsJumpForwardTrigger="<leader>n"
+let g:UltiSnipsJumpBackwardTrigger="<leader>p"
 " }}}
 
 "status line {{{
