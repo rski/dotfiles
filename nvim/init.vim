@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vimwiki/vimwiki'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
+  Plug 'tpope/vim-pathogen'
   Plug 'tpope/vim-dispatch'
   Plug 'ervandew/supertab'
   Plug 'ap/vim-css-color'
@@ -176,3 +177,6 @@ set directory=~/.tmp
 "vim inherits the terminal name
 "now terminal windows get a title based on the filename
 set title
+
+"pathogen
+execute pathogen#infect('~/Code/vim-plugins/{}')
