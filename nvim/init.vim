@@ -180,3 +180,7 @@ set title
 
 "pathogen
 execute pathogen#infect('~/Code/vim-plugins/{}')
+
+"search highlighting
+set hlsearch
+nnoremap <leader>a :nohlsearch<cr>
