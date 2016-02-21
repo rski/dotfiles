@@ -38,9 +38,8 @@ if [ -f $HOME/.aliases ]; then
 fi
 
 #options
-setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word    
+setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
 setopt extended_history # save timestamp of command and duration
-setopt hist_ignore_dups #ignore duplicates
 setopt inc_append_history # Add comamnds as they are typed, don't wait until shell exit
 setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
 setopt correct # spelling correction for commands
@@ -50,6 +49,7 @@ setopt list_ambiguous #complete to "something" if something1 & something2 exist 
 export HISTSIZE=2000
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=$HISTSIZE
+
 #wine
 export WINEPREFIX=$HOME/.config/wine/
 export WINEARCH=win32
