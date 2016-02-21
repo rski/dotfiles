@@ -49,7 +49,7 @@ lxterminal:
 
 
 gitcfg:
-	$(makelink)/git/gitconfig ${HOME}/.gitconfig
+	./git/gitconfig.sh
 	${makelink}/git/gitignore ${HOME}/.gitignore
 
 
