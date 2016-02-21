@@ -17,6 +17,8 @@ alias cheese="CLUTTER_BACKEND=x11 cheese"
 alias tpope="tmux"
 alias aura="sudo aura"
 
+alias cp='cp -v'
+alias mv='mv -v'
 
 if [ -f $HOME/.private_aliases ]; then
   source $HOME/.private_aliases
