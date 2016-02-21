@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'majutsushi/tagbar'
   end
   Plug 'hynek/vim-python-pep8-indent'
+  Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 " }}}
 
