@@ -34,6 +34,7 @@ call plug#begin('~/.config/nvim/plugged')
   end
   Plug 'hynek/vim-python-pep8-indent'
   Plug 'jlanzarotta/bufexplorer'
+  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
 " }}}
 
@@ -47,6 +48,7 @@ set shiftwidth=2
 set softtabstop=2
 syntax on
 colorscheme molokai
+set cursorline
 " }}}
 
 "ignore files {{{
