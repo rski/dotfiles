@@ -4,7 +4,7 @@ end
 
 " plugins {{{
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'davidhalter/jedi-vim'
+  Plug 'davidhalter/jedi-vim', { 'for': 'python' }
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'scrooloose/syntastic'
