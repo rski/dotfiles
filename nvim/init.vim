@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hynek/vim-python-pep8-indent'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'on': 'YcmGenerateConfig'}
+  Plug 'rski/vim-tohebi'
 call plug#end()
 " }}}
 
@@ -55,6 +56,9 @@ set cursorline
 set wildignore=*.swp,*.pyc
 " }}}
 
+"pathogen
+execute pathogen#infect('~/Code/vim-plugins/{}')
+
 " per filetype settings {{{
 augroup filetypedetection
   autocmd!
@@ -68,9 +72,11 @@ augroup END
 "}}}
 
 "syntastic {{{
+let g:pylintrc = tohebi#getrc()
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_puppetlint_args = "--no-documentation-check"
+let g:syntastic_python_pylint_args = '--rcfile='. g:pylintrc
 " }}}
 
 " mappings {{{
@@ -181,8 +187,6 @@ set directory=~/.tmp
 "now terminal windows get a title based on the filename
 set title
 
-"pathogen
-execute pathogen#infect('~/Code/vim-plugins/{}')
 
 "search highlighting
 set hlsearch
