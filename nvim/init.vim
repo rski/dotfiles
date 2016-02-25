@@ -192,3 +192,5 @@ set title
 "search highlighting
 set hlsearch
 nnoremap <leader>a :nohlsearch<cr>
+
+iabbrev pluggin plugin
