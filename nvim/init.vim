@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hynek/vim-python-pep8-indent'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'on': 'YcmGenerateConfig'}
+  Plug 'dbakker/vim-projectroot'
   Plug 'rski/vim-tohebi'
 call plug#end()
 " }}}
