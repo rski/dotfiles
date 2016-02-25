@@ -3,7 +3,7 @@
 makelink = ln -sf `pwd`
 configdir = ${HOME}/.config
 
-all: submodules vim wm lxterminal spacemacs aliases zsh gitcfg
+all: submodules vim wm lxterminal spacemacs aliases zsh gitcfg tmux
 
 
 submodules:

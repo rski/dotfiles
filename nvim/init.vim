@@ -192,5 +192,3 @@ set title
 "search highlighting
 set hlsearch
 nnoremap <leader>a :nohlsearch<cr>
-
-let g:syntastic_python_pylint_args = '--rcfile='.$HOME.'/.pylintrc'
