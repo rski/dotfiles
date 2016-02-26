@@ -20,6 +20,9 @@ alias aura="sudo aura"
 alias cp='cp -v'
 alias mv='mv -v'
 
+alias less='less -R'
+alias vimp='vim +CtrlP'
+
 if [ -f $HOME/.private_aliases ]; then
   source $HOME/.private_aliases
 fi
