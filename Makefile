@@ -1,9 +1,9 @@
-.PHONY: all clean vim wm awesome spacemacs archey3 aliases lxterminal zsh gitcfg submodules
+.PHONY: all clean vim wm awesome spacemacs archey3 aliases lxterminal zsh gitcfg submodules emacs
 
 makelink = ln -sf `pwd`
 configdir = ${HOME}/.config
 
-all: submodules vim wm spacemacs gitcfg
+all: submodules vim wm emacs gitcfg
 
 
 shell: zsh bash tmux aliases lxterminal
@@ -35,7 +35,8 @@ awesome:
 	$(makelink)/awesome $(configdir)
 
 
-spacemacs:
+emacs:
+	$(makelink)/emacs ${HOME}/.emacs
 	$(makelink)/spacemacs ${HOME}/.spacemacs
 
 
