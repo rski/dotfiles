@@ -49,7 +49,6 @@ for index = 1, #autostart do
 end
 
 browser = "chromium"
-xdg_menu = require("archmenu")
 primaryfm = "dbus-launch pcmanfm"
 secondaryfm = terminal .. " -e ranger"
 
@@ -133,7 +132,6 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Applications", xdgmenu },
                                     { "open terminal", terminal }
                                   }
                         })
