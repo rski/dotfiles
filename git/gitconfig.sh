@@ -22,7 +22,12 @@ $GCF alias.s "status"
 # TODO(rski): do not prompt if an email is already set
 if [ `hostname` != "nauticus" ]
 then
-  echo -n "Git email: "
-  read email
+  if [ -f $HOME/.email ]
+  then
+    email=`cat $HOME/.email`
+  else
+    echo -n "Git email: "
+    read email
+  fi
   $GCF user.email $email
 fi
