@@ -29,6 +29,7 @@ values."
      scheme
      git
      lua
+     python
      ;; markdown
      org
      ;; (shell :variables
