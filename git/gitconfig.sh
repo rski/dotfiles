@@ -28,6 +28,7 @@ then
   else
     echo -n "Git email: "
     read email
+    echo $email >> $HOME/.email
   fi
   $GCF user.email $email
 fi
