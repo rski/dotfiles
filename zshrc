@@ -61,16 +61,17 @@ RANGER_LOAD_DEFAULT_RC=FALSE
 #smth smth fixes the ^M yaourt problem maybe
 ttyctl -f
 
-#ohmyzsh
-#export DISABLE_AUTO_UPDATE=TRUE
-#export ZSH=/usr/share/oh-my-zsh
-#ZSH_THEME="bullet-train"
-#source $ZSH/oh-my-zsh.sh
-#plugins=(archlinux)
+source $HOME/.zshrc_local
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+plugins=(/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+         /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh)
+for plugin in $plugins; do
+  if [ -f $plugin ]; then
+    source $plugin
+  fi
+done
 
+# TODO: only bind them if shistory-substring-search has been sourced
 # bind P and N for EMACS mode prev-next history search
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
@@ -84,3 +85,10 @@ fi
 __git_files () {
   _wanted files expl 'local files' _files
 }
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\${vcs_info_msg_0_}
+zstyle ':vcs_info:git:*' formats '%b'
