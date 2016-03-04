@@ -44,9 +44,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(company-ycmd
+                                      ycmd
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(anaconda-mode)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -82,8 +84,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(misterioso
-                         monokai
+   dotspacemacs-themes '(monokai
                          spacemacs-dark
                          spacemacs-light
                          solarized-light
@@ -205,7 +206,8 @@ user code."
 layers configuration. You are free to put any user code."
   (global-hl-line-mode 0)
   (global-linum-mode)
-)
+  (set-variable 'ycmd-server-command '("python" "/home/ubuntu/.ycmd/ycmd"))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
