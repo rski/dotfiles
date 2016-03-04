@@ -206,8 +206,10 @@ user code."
 layers configuration. You are free to put any user code."
   (global-hl-line-mode 0)
   (global-linum-mode)
-  (set-variable 'ycmd-server-command '("python" "/home/ubuntu/.ycmd/ycmd"))
+ (set-variable 'ycmd-server-command  `("python2"
+                                       ,(substitute-in-file-name "$HOME/.ycmd/ycmd")))
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
