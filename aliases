@@ -16,6 +16,7 @@ alias genmenu="xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applica
 alias cheese="CLUTTER_BACKEND=x11 cheese"
 alias tpope="tmux"
 alias aura="sudo aura"
+alias emacs="emacs -nw"
 
 alias cp='cp -v'
 alias mv='mv -v'
