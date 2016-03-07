@@ -30,8 +30,10 @@ values."
      git
      lua
      python
+     latex
      ;; markdown
      org
+     ycmd
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -44,9 +46,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(company-ycmd
-                                      ycmd
-                                      )
+   dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(anaconda-mode)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -206,8 +206,8 @@ user code."
 layers configuration. You are free to put any user code."
   (global-hl-line-mode 0)
   (global-linum-mode)
- (set-variable 'ycmd-server-command  `("python2"
-                                       ,(substitute-in-file-name "$HOME/.ycmd/ycmd")))
+  (set-variable 'ycmd-server-command  `("python2"
+                                        ,(substitute-in-file-name "$HOME/.ycmd/ycmd")))
   )
 
 
