@@ -1,6 +1,0 @@
-[submodule "submodules/vim-plug"]
-	path = submodules/vim-plug
-	url = https://github.com/junegunn/vim-plug
-[submodule "awesome/pomodoro"]
-	path = awesome/pomodoro
-	url = https://github.com/nikolavp/awesome-pomodoro
